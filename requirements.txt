@@ -2,3 +2,4 @@ amino.py
 requests
 flask
 gunicorn
+json_minify
