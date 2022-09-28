@@ -1,0 +1,21 @@
+from flask import *
+import os
+from amino import Client
+
+os.system('set FLASK_ENV=development')
+app = Flask(__name__)
+
+
+@app.route('/api/login', methods=['POST'])
+def get_timezone():
+    data = request.form
+    login = data.get("login")
+    password = data.get("password")
+    device = data.get("device")
+    client = Client(device)
+    client.login(email=login, password=password)
+    return f"{client.sid}"
+
+
+if __name__ == '__main__':
+    app.run("0.0.0.0", 5000)

@@ -1,0 +1,4 @@
+amino.py
+requests
+flask
+gunicorn
